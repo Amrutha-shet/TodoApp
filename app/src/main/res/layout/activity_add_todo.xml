@@ -46,12 +46,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/todo_title" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/add_image"
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_marginTop="@dimen/dimen_50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/todo_cta"
+            app:srcCompat="@drawable/ic_baseline_image_24" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_50dp"
             android:background="@drawable/bg_rounded_rectangele_pink"
             android:text="@string/cancel"
             android:textColor="@color/white"
@@ -59,22 +69,22 @@
             app:layout_constraintEnd_toStartOf="@id/btn_done"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/todo_cta" />
+            app:layout_constraintTop_toBottomOf="@id/add_image" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_16dp"
-            android:background="@drawable/bg_rounded_rectangele_pink"
-            android:enabled="false"
             android:layout_marginStart="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_50dp"
+            android:background="@drawable/button_selector"
+            android:enabled="false"
             android:text="@string/done"
             android:textColor="@color/white"
             android:textSize="@dimen/text_14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_cancel"
-            app:layout_constraintTop_toBottomOf="@id/todo_cta" />
+            app:layout_constraintTop_toBottomOf="@id/add_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

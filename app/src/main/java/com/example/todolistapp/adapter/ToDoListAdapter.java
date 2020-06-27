@@ -10,10 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.todolistapp.R;
 import com.example.todolistapp.database.Todo;
 import com.example.todolistapp.databinding.ItemTodoListBinding;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -58,10 +60,17 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.TodoVi
             binding.title.setText(toDoItem.getTitle());
             binding.description.setText(toDoItem.getDescription());
             binding.checkbox.setChecked(toDoItem.getIsCompleted() == 1);
+            if (toDoItem.getImagePath() != null) {
+                Glide.with(binding.image.getContext())
+                        .load(new File(toDoItem.getImagePath()))
+                        .circleCrop()
+                        .placeholder(R.mipmap.ic_launcher)
+                        .into(binding.image);
+            }
             binding.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    toDoItem.setIsCompleted(isChecked?1:0);
+                    toDoItem.setIsCompleted(isChecked ? 1 : 0);
                     todoItemClickListener.onTodoItemClick(toDoItem);
                 }
             });
