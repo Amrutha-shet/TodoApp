@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dimen_16dp"
+        android:paddingBottom="@dimen/dimen_12dp"
+        app:contentInsetStart="@dimen/dimen_0dp"
+        android:background="@color/colorPrimary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/todo_list"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/btn_add"
+                app:layout_constraintEnd_toEndOf="@id/btn_add"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add"
+                android:textSize="@dimen/text_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/bg_rounded_rectangele_pink"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/dimen_8dp" />
+
+            <SearchView
+                android:id="@+id/edt_search_bar"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:background="@drawable/bg_grey_rounded_rectangle"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:iconifiedByDefault="false"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_add" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</layout>
